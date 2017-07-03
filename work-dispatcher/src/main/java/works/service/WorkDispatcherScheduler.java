@@ -16,8 +16,14 @@ public class WorkDispatcherScheduler {
     private WorkUnitGateway workUnitGateway;
 
     @Scheduled(fixedDelay = 100)
-    public void send() {
+    public void sendToMain() {
         workUnitGateway.generate(new WorkUnit(UUID.randomUUID().toString(),
+                String.format("Generated at %s",new SimpleDateFormat("HH:mm:ss").format(new Date()))));
+    }
+
+    @Scheduled(fixedDelay = 100)
+    public void sendToSecond() {
+        workUnitGateway.generateOnSecond(new WorkUnit(UUID.randomUUID().toString(),
                 String.format("Generated at %s",new SimpleDateFormat("HH:mm:ss").format(new Date()))));
     }
 

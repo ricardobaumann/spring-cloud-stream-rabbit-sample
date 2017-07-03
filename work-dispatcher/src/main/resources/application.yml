@@ -10,6 +10,11 @@ spring:
           destination: work.exchange
           contentType: application/json
           group: testgroup
+        secondChannel:
+          binder: rabbit
+          destination: work.exchange
+          contentType: application/json
+          group: testgroup
   rabbitmq:
       password: "rabbitmq"
       username: "rabbitmq"

@@ -12,6 +12,11 @@ public class WorkHandler {
 
     @StreamListener(WorkUnitsSink.CHANNEL_NAME)
     public void process(WorkUnit workUnit) {
-        LOGGER.info("Handling work unit - id: {}, definition: {}", workUnit.getId(), workUnit.getDefinition());
+        LOGGER.info("Handling first work unit - id: {}, definition: {}", workUnit.getId(), workUnit.getDefinition());
+    }
+
+    @StreamListener(WorkUnitsSink.SECOND_NAME)
+    public void processSecond(WorkUnit workUnit) {
+        LOGGER.info("Handling second work unit - id: {}, definition: {}", workUnit.getId(), workUnit.getDefinition());
     }
 }
