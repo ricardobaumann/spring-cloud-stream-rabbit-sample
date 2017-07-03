@@ -9,7 +9,4 @@ public interface WorkUnitGateway {
 	@Gateway(requestChannel = WorkUnitsSource.CHANNEL_NAME)
 	void generate(WorkUnit workUnit);
 
-	@Gateway(requestChannel = WorkUnitsSource.SECOND_NAME)
-	void generateOnSecond(WorkUnit workUnit);
-
 }

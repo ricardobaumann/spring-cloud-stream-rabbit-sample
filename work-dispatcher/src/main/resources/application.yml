@@ -9,12 +9,7 @@ spring:
           binder: rabbit
           destination: work.exchange
           contentType: application/json
-          group: testgroup
-        secondChannel:
-          binder: rabbit
-          destination: work.exchange
-          contentType: application/json
-          group: testgroup
+          group: testgroup, testgroup1
   rabbitmq:
       password: "rabbitmq"
       username: "rabbitmq"
